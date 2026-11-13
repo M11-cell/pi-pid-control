@@ -48,7 +48,6 @@ namespace pid_controller{
             void setpointCallback(const std_msgs::msg::Float64::SharedPtr msg);
             void stateCallback(const std_msgs::msg::Float64::SharedPtr msg);
             void pidEnableCallback(const std_msgs::msg::Bool::SharedPtr msg);
-            void controlLoop(); 
 
             void initCOntroller();        
 

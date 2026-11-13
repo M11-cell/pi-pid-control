@@ -40,7 +40,7 @@ namespace pid_controller
              * @param current_value Takes in current value of process variable 
              * @return control output
             */
-            double update(double current_value); 
+            double updatePID(double current_value); 
 
             /**
              * @brief Resets the PID controller
@@ -79,10 +79,10 @@ namespace pid_controller
             double kp; 
             double ki; 
             double kd; 
-            double setpoint;
-            std::pair<double, double> output_limits; 
-            std::pair<double,double> integral_limits; 
-            double outputs; //last caluclated output 
+            double setpoint_;
+            std::pair<double, double> output_limits_; 
+            std::pair<double,double> integral_limits_; 
+            double output; //last caluclated output 
 
         private:  
         
