@@ -54,14 +54,48 @@ namespace pid_controller
             */
             void setpoint(double new_setpoint);
 
-        private:    
+
+            /**
+             * @brief updatesa the PID gains
+             * 
+             * @param p input proportional gain
+             * @param i input integral gain 
+             * @param d input derivative gain
+            */
+            void tunePID(double p, double i, double d);
+
+
+            /**
+             * @brief Calculates the PID error value for a given reference input and feedback
+             * 
+             * @param desired_state Takes in the setpoint value as the desired state
+             * @param measured_state the last calculated output
+             * @return positional error 
+            */
+            double calculateError(double desired_state, double measured_state);
 
 
 
+            double kp; 
+            double ki; 
+            double kd; 
+            double setpoint;
+            std::pair<double, double> output_limits; 
+            std::pair<double,double> integral_limits; 
+            double outputs; //last caluclated output 
 
+        private:  
+        
+            double proportional_{0.0};
+            double integral_{0.0};
+            double derivative_{0.0};
+
+            std::chrono::time_point<std::chrono::steady_clock> last_time_;
+            double last_error_{0.0};
+            bool first_update_{true}; 
     };
 } // namespace pid_controller
 
 
 
-#endif
+#endif // PID_HPP
