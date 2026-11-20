@@ -82,12 +82,6 @@ namespace pid_controller{
         setpoint_ = new_setpoint; 
     }
 
-    void PID::tunePID(double p, double i, double d){
-
-        kp = p; 
-        ki = i;
-        kd = d; 
-    }
 
     double PID::calculateError(double desired_state, double measured_state){
 

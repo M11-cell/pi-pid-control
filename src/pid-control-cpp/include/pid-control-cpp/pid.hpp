@@ -56,16 +56,6 @@ namespace pid_controller
 
 
             /**
-             * @brief updatesa the PID gains
-             * 
-             * @param p input proportional gain
-             * @param i input integral gain 
-             * @param d input derivative gain
-            */
-            void tunePID(double p, double i, double d);
-
-
-            /**
              * @brief Calculates the PID error value for a given reference input and feedback
              * 
              * @param desired_state Takes in the setpoint value as the desired state

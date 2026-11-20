@@ -12,6 +12,8 @@
 
 #include "pid-control-cpp/pid.hpp"
 
+#include <wiringPi.h>
+
 
 namespace pid_controller{
 
@@ -49,7 +51,7 @@ namespace pid_controller{
             void stateCallback(const std_msgs::msg::Float64::SharedPtr msg);
             void pidEnableCallback(const std_msgs::msg::Bool::SharedPtr msg);
 
-            void initCOntroller();        
+            void initController();        
 
     };
 
